@@ -122,34 +122,6 @@ btnDeletar.addEventListener('click', () => {
     resetarFormulario();
 });
 
-// Modifique o evento de submit do formulário
-formAdicionarTarefa.addEventListener('submit', (evento) => {
-    evento.preventDefault();
-    
-    if (!textarea.value.trim()) {
-        alert('Digite uma descrição válida!');
-        return;
-    }
-
-    if (tarefaEmEdicao) {
-        // Modo Edição
-        tarefaEmEdicao.descricao = textarea.value;
-        paragrafoEmEdicao.textContent = textarea.value;
-    } else {
-        // Modo Criação
-        const novaTarefa = {
-            descricao: textarea.value,
-            completa: false
-        };
-        tarefas.push(novaTarefa);
-        const elementoTarefa = criarElementoTarefa(novaTarefa);
-        ulTarefas.append(elementoTarefa);
-    }
-    
-    atualizarTarefas();
-    resetarFormulario();
-});
-
 btnAdicionarTarefa.addEventListener("click", () => {
     if (formAdicionarTarefa.classList.contains("hidden")) {
       // Se o formulário estava oculto, reseta a edição
