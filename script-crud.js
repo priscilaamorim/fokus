@@ -60,7 +60,7 @@ function criarElementoTarefa(tarefa) {
 };
 
   const imagemBotao = document.createElement("img");
-  imagemBotao.setAttribute("src", "/imagens/edit.png");
+  imagemBotao.setAttribute("src", "./imagens/edit.png");
 
   botao.append(imagemBotao);
   li.append(paragrafo, botao);
@@ -121,6 +121,8 @@ btnDeletar.addEventListener('click', () => {
     }
     resetarFormulario();
 });
+
+
 
 btnAdicionarTarefa.addEventListener("click", () => {
     if (formAdicionarTarefa.classList.contains("hidden")) {
